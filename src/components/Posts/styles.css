@@ -1,0 +1,5 @@
+.post {
+  background-color: white;
+  grid: 30px / auto auto auto;
+  margin: 20px;
+}
