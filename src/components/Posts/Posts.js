@@ -3,14 +3,15 @@ import './styles.css'
 import { useSelector } from 'react-redux'
 
 
-export const Post = () => {
+const Post = () => {
   const posts = useSelector(state => state.posts)
+  console.log(posts);
 
   const renderedPosts = posts.map(post => (
     <article className="post" key={post.id}>
-      <h3>{post.Heading}</h3>
-      <h5>{post.SubHeading}</h5>
-      <p className="post-summary">{post.Summary}</p>
+      <h3>{post.heading}</h3>
+      <h5>{post.subHeading}</h5>
+      <p className="post-summary">{post.summary}</p>
     </article>
   ))
 

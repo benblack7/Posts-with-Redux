@@ -1,4 +1,9 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { nanoid } from '@reduxjs/toolkit';
+
+import { postAdded } from '../../redux';
+
 import './styles.css';
 
 
@@ -7,9 +12,27 @@ const Form = () => {
   const[subHeading, setSubHeading] = useState('')
   const[summary, setSummary] = useState('')
 
+  const dispatch = useDispatch()
+
   const onHeadingChange = (e: React.ChangeEvent<HTMLInputElement>) => setHeading(e.target.value)
   const onSubHeadingChange = (e: React.ChangeEvent<HTMLInputElement>) => setSubHeading(e.target.value)
   const onSummaryChange = (e: React.ChangeEvent<HTMLTextAreaElement>)=> setSummary(e.target.value)
+
+  const onSubmit = () => {
+    if (heading && subHeading && summary) {
+      dispatch(
+        postAdded({
+          id: nanoid(),
+          heading,
+          subHeading,
+          summary
+        })
+      )
+      setHeading('')
+      setSubHeading('')
+      setSummary('')
+    }
+  }
 
   return (
     <React.Fragment>
@@ -36,7 +59,12 @@ const Form = () => {
           value={summary}
           placeholder="Summary"
           />
-          <input type="button" name="Submit" value="Submit" />
+          <input
+          type="button"
+          name="Submit"
+          value="Submit"
+          onClick={onSubmit}
+          />
         </fieldset>
       </form>
     </React.Fragment>

@@ -4,6 +4,7 @@ import Form from './components/Form/Form'
 
 function App() {
   return (
+
     <div className="root">
       <div className="gridContainer">
         <div className="gridPost">
@@ -14,6 +15,7 @@ function App() {
         </div>
       </div>
     </div>
+
   );
 }
 
