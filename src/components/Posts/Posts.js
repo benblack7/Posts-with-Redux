@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux'
 
 
 const Post = () => {
+  //useSelector to read data from and to subscribe to the Store
   const posts = useSelector(state => state.posts)
-  console.log(posts);
 
   const renderedPosts = posts.map(post => (
     <article className="post" key={post.id}>
@@ -16,12 +16,12 @@ const Post = () => {
   ))
 
   return (
-  <React.Fragment>
-     <ul className="cards" >
-       <h1>Posts</h1>
-       {renderedPosts}
+    <React.Fragment>
+      <ul className="cards" >
+        <h1>Posts</h1>
+        {renderedPosts}
       </ul>
-  </React.Fragment>
+    </React.Fragment>
   );
 }
 
