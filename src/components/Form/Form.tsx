@@ -37,7 +37,7 @@ const Form = () => {
   return (
     <React.Fragment>
       <form id="msform">
-        <fieldset>
+        <fieldset className="container">
           <h2>Create Post</h2>
           <h3>Fill the all mention detail to submit the form</h3>
           <input
@@ -55,6 +55,7 @@ const Form = () => {
           placeholder="Sub-Heading"
           />
           <textarea
+          className="text"
           onChange={onSummaryChange}
           value={summary}
           placeholder="Summary"

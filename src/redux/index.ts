@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = [
   { id: 'iqf4_NIq_3DuraMrK0InU', heading: 'First Post', subHeading: 'subheading', summary: 'First!' },
-  { id: 'iqf4_NIq_3DuraMrK0Inr', seading: 'Second!', subHeading: 'subbed', summary: 'I missed it!' },
+  { id: 'iqf4_NIq_3DuraMrK0Inr', heading: 'Second!', subHeading: 'subbed', summary: 'I missed it!' },
 ]
 
 export const postsSlice = createSlice({

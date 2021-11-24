@@ -9,7 +9,7 @@ const Post = () => {
 
   const renderedPosts = posts.map(post => (
     <article className="post" key={post.id}>
-      <h3>{post.heading}</h3>
+      <h4>{post.heading}</h4>
       <h5>{post.subHeading}</h5>
       <p className="post-summary">{post.summary}</p>
     </article>
